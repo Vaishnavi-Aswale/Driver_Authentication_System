@@ -33,4 +33,4 @@ will be created in our database
 <img src="DrivefyWebsite/4.JPG"/>
 
 + Fingerprint Model
-<img src="DrivefyWebsite/8.JPG"/>
+<img width="250" src="DrivefyWebsite/8.jpg"/>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vehicle Detail Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="destyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+	<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 7%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+
+  </head>
+<body>
+<!--
+<div class="text-center">
+  <h3 >Drivefy</h3>
+  <div class="head"><b>Driver Authentication System</b></div>
+</div> /-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#form">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#About">About us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#contact">Contact us</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+   <div class="carousel-item active">
+    <div class="img-responsive">
+      <img style="width:100%; height:650px; align: middle; "src="download.jpg" alt="First slide">
+        <div class="after">
+            <div class="carousel-caption d-none d-md-block">
+      	        <h1>DRIVEFY</h1>
+                <p>BEST FOR YOUR VEHICLE</p>
+            </div>
+       </div>
+   </div>
+  </div>
+
+    <div class="carousel-item">
+    	  <div class="img-responsive">
+              <img style="width:100%; height:650px; align: middle; "  src="s2.jpg" alt="Second slide">
+                  <div class= "after">
+                     <div class="carousel-caption">
+                            <h1>SAFETY AT YOUR FINGERTIPS</h1>
+                      </div>
+                  </div>
+           </div>
+    </div>
+
+    <div class="carousel-item">
+    	<div class="img-responsive">
+           <img style="width:100%; height:650px; align: middle; " src="slide3.jpg" alt="Third slide"> 
+               <div class="after">
+                   <div class="carousel-caption">
+                        <h1></h1>
+                      
+                   </div>
+              </div>
+        </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+<div id="About">
+	<div class="jumbotron text-center">
+	<h1 style="text-align: center; margin-top:100px;">Welcome to Drivefy!</h1><br>
+	<div class="container">
+		<div class="flex-container">
+  			<div style="flex-grow: 0.4">
+
+   			<h2 style="text-align: center;">ABOUT US</h2><br>
+   			<b> <p style="text-align: center;">We aim at providing safety and preventing mishap.<br> In today’s world, vehicle sales i.e. the use of vehicles is directly proportional to the population growth, thereby increasing the rate of accidents.<br>Therefore our team decided to build a system where we can prevent mishap or even if any mishap has occurred ,<BR>with the help of location and details of driver, the culprit can be caught.This system compels the driver to carry the driving license and hence non-licensed person will not be able to access the vehicle.</p></b> <br><br>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<div id="form" style="padding-top:120px; padding-bottom:120px;">
+<h2 style="text-align: center;margin-bottom: 20px;">Login </h2>
+<form >
+   <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+  <img src="loginimg.jpg" alt="login" style="float:right;width:400px;height:300px;">
+  <label for="fname">User ID:</label><br>
+  <input type="text" id="fname" placeholder="Enter Username" name="fname" required><br>
+  <label for="lname">Password:</label><br>
+  <input type="password" id="lname" placeholder="Enter Password" name="lname" required ><br><br>
+  <!-- <input type="button" id="sub"  value="Submit"> -->
+  <button type="button" id="sub" onclick="runFunc();"> Login</button><br>
+   <label>
+   <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+</form>
+</div> 
+
+<script src="firebase2.js"></script>
+
+
+<div id="contact">
+	<div class="jumbotron text-center">
+	    <h1>Contact Us</h1>
+  		<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Anuraag Khanna</h3>
+	  <p> 16101B0014</p>
+      <p>anuraagkhanna@outlook.com</p>
+      <p></p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Mayuri Sadawarti</h3>
+	  <p> 16101B0053</p>
+      <p>swmayuri99@gmail.com</p>
+      
+    </div>
+    <div class="col-sm-4">
+      <h3>Vaishnavi Aswale</h3>        
+      <p>16101B0009</p>
+      <p>aswalevaishnavi@gmail.com</p>
+    </div>
+	
+		</div>
+</div>
+</body>
+</html>

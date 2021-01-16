@@ -1,0 +1,62 @@
+	<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vehicle Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <style>
+	
+	
+body {
+  background-color:#E6E6FA;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+  </head>
+
+  <body>
+      <table style="width:100%" id="ex-table">
+
+    <!-- Rohit did changes here -->
+        <thead>
+          <tr id="tr">
+            <th >First Name</th>
+            <th >Last Name</th>
+            <th>License Number</th>
+            <th>Access Status</th>
+            <th>Lat</th>
+            <th>Long</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+
+  
+   <!-- Rohit did changes here -->
+        <tbody>
+            <!-- Keep it blank and append row each time -->
+            
+        </tbody>
+
+  </table>
+  <button onclick="getDet()">Change Status</button>
+    <script src="firebase.js"></script>
+    
+  </body>
+</html>
